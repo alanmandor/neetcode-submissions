@@ -1,0 +1,8 @@
+-- Write your query below
+SELECT DISTINCT seller_name
+FROM seller s
+LEFT JOIN orders o
+ON s.seller_id = o.seller_id
+AND DATE_PART('year',sale_date) = 2020
+WHERE o.order_id IS NULL
+ORDER BY 1
